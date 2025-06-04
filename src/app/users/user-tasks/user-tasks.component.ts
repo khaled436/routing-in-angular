@@ -20,8 +20,18 @@ import {
   ]
 })
 export class UserTasksComponent {
+
+  private readonly activeRoute = inject(ActivatedRoute);
+
   userName = input.required<string>();
   message = input.required<string>();
+
+  // ngOnInit(): void {
+  //   this.activeRoute.data.subscribe({
+  //     next: data => {
+  //       console.log(data)}
+  //   })
+  // }
 
 }
 
