@@ -19,16 +19,18 @@ export class UserTasksComponent implements OnInit {
   private readonly userService = inject(UsersService);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
+
   userName = '';
+  message = input.required<string>();
 
   ngOnInit(): void {
+    console.log('test message : '+this.message());
     console.log(this.activatedRoute);
     const subscription = this.activatedRoute.paramMap.subscribe({
       next: (paramMap) => {
         this.userName = this.userService.users.find((user)=> user.id === paramMap.get('userId'))?.name||'';
       }
     })
-
     this.destroyRef.onDestroy(subscription.unsubscribe);
   }
 
