@@ -16,6 +16,7 @@ export const routes: Routes = [
     data: {
      message : 'hello',
     },
+    runGuardsAndResolvers: 'always',
     resolve:  {
       userName: resolveUserName,
     },
