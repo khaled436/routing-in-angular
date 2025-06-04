@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { TasksComponent, resolveUserTasks } from '../tasks/tasks.component';
-import { NewTaskComponent } from '../tasks/new-task/new-task.component';
+import {canLeavePage, NewTaskComponent} from '../tasks/new-task/new-task.component';
 
 export const userRoutes: Routes = [
   {
@@ -19,5 +19,6 @@ export const userRoutes: Routes = [
   {
     path: 'tasks/new',
     component: NewTaskComponent,
+    canDeactivate:[canLeavePage]
   },
 ];
